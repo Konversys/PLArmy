@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PLArmy.Classes.Delegate;
-using PLArmy.Interfaces.Decorator;
+﻿using PLArmy.Interfaces.Decorator;
 
 namespace PLArmy.Classes.Decorator
 {

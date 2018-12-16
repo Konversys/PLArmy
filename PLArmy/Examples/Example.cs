@@ -1,17 +1,13 @@
 ﻿using PLArmy.Classes.Adapter;
-using PLArmy.Classes.Composite;
+using PLArmy.Classes.Compos;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
-using PLArmy.Interfaces.Composite;
+using PLArmy.Interfaces.Compos;
 using PLArmy.Interfaces.Decorator;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PLArmy.Examples
 {

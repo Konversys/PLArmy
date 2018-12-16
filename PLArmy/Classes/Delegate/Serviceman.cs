@@ -3,10 +3,6 @@ using PLArmy.Interfaces.Adapter;
 using PLArmy.Interfaces.Decorator;
 using PLArmy.Interfaces.Delegate;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PLArmy.Classes.Delegate
 {

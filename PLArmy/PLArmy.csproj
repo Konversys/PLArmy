@@ -44,10 +44,8 @@
   <ItemGroup>
     <Compile Include="Classes\Adapter\ConscriptUSA.cs" />
     <Compile Include="Classes\Adapter\RusificatedConscriptUSA.cs" />
-    <Compile Include="Classes\Composite\Ammo.cs" />
-    <Compile Include="Classes\Composite\Composite.cs" />
-    <Compile Include="Classes\Composite\Fuel.cs" />
-    <Compile Include="Classes\Composite\ZIP.cs" />
+    <Compile Include="Classes\Compos\Ammo.cs" />
+    <Compile Include="Classes\Compos\Composite.cs" />
     <Compile Include="Classes\Decorator\ServicemanDecorator.cs" />
     <Compile Include="Classes\Decorator\ServiceManDuty.cs" />
     <Compile Include="Classes\Decorator\ServicemanResponsible.cs" />
@@ -59,14 +57,16 @@
     <Compile Include="Classes\Delegate\LowLevelKnowledge.cs" />
     <Compile Include="Classes\Delegate\LowRank.cs" />
     <Compile Include="Classes\Delegate\Serviceman.cs" />
+    <Compile Include="Classes\Compos\Fuel.cs" />
     <Compile Include="Classes\Proxy\ProxyStock.cs" />
     <Compile Include="Classes\Proxy\Stock.cs" />
+    <Compile Include="Classes\Compos\ZIP.cs" />
     <Compile Include="Enums\ERank.cs" />
     <Compile Include="Enums\ESubdivision.cs" />
     <Compile Include="Examples\Example.cs" />
     <Compile Include="Interfaces\Adapter\IServiceMan.cs" />
     <Compile Include="Interfaces\Adapter\IServicemanUSA.cs" />
-    <Compile Include="Interfaces\Composite\IItem.cs" />
+    <Compile Include="Interfaces\Compos\IItem.cs" />
     <Compile Include="Interfaces\Decorator\IEmergency.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
     <Compile Include="Interfaces\Delegate\IEquipment.cs" />

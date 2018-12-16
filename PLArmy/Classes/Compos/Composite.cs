@@ -1,35 +1,16 @@
-﻿using PLArmy.Classes.Iterator;
-using PLArmy.Enums;
-using PLArmy.Interfaces.Composite;
-using PLArmy.Interfaces.Iterator;
+﻿using PLArmy.Enums;
+using PLArmy.Interfaces.Compos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PLArmy.Classes.Composite
+namespace PLArmy.Classes.Compos
 {
     /// <summary>
     /// Список подразделений и выданных им предметов
     /// Представляет компонент, который может содержать другие компоненты и реализует механизм для их добавления и удаления
     /// </summary>
-    class Composite : IItem, IItemNumerable
-    {
-        public IItem this[int index]
-        {
-            get { return components[index]; }
-        }
-
-        public int Count
-        {
-            get { return components.Count; }
-        }
-        public IItemIterator CreateNumerator()
-        {
-            return new ItemNumerator(this);
-        }
-
+    class Composite : IItem
+    { 
         /// <summary>
         /// Хранит компоненты
         /// </summary>
