@@ -33,7 +33,7 @@ namespace PLArmy.Classes.Composite
         /// <summary>
         /// Хранит компоненты
         /// </summary>
-        List<IItem> components = new List<IItem>();
+        List<IItem> components { get; set; }
         /// <summary>
         /// Добавить элемент
         /// </summary>
