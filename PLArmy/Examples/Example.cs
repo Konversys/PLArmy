@@ -2,6 +2,7 @@
 using PLArmy.Classes.Composite;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
+using PLArmy.Classes.Iterator;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
@@ -113,7 +114,9 @@ namespace PLArmy.Examples
             sq.AddItem(platoon);
             sq.AddItem(platoon);
 
-            sq.Take(ESubdivision.Рота);
+            //sq.Take(ESubdivision.Рота);
+            ItemChecker checker = new ItemChecker();
+            checker.TraversalData(sq, ESubdivision.Рота);
 
             Console.ReadKey();
         }

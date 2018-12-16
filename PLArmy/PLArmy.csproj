@@ -59,6 +59,8 @@
     <Compile Include="Classes\Delegate\LowLevelKnowledge.cs" />
     <Compile Include="Classes\Delegate\LowRank.cs" />
     <Compile Include="Classes\Delegate\Serviceman.cs" />
+    <Compile Include="Classes\Iterator\ItemChecker.cs" />
+    <Compile Include="Classes\Iterator\ItemNumerator.cs" />
     <Compile Include="Classes\Proxy\ProxyStock.cs" />
     <Compile Include="Classes\Proxy\Stock.cs" />
     <Compile Include="Enums\ERank.cs" />
@@ -70,6 +72,8 @@
     <Compile Include="Interfaces\Decorator\IEmergency.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
     <Compile Include="Interfaces\Delegate\IEquipment.cs" />
+    <Compile Include="Interfaces\Iterator\IItemNumerable.cs" />
+    <Compile Include="Interfaces\Iterator\IItemIterator.cs" />
     <Compile Include="Interfaces\Proxy\IMilitaryStock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
