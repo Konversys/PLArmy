@@ -1,4 +1,5 @@
-﻿using PLArmy.Classes.Delegate;
+﻿using PLArmy.Classes.Adapter;
+using PLArmy.Classes.Delegate;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
@@ -49,6 +50,20 @@ namespace PLArmy.Examples
             serviceman.CanICommand();
             Console.WriteLine();
             serviceman.CanIEquipment();
+            Console.ReadKey();
+        }
+
+        public static void GoAdapterRusConscriptUSA()
+        {
+            Serviceman serviceman = new Conscript();
+            serviceman.CanICommand();
+            Console.WriteLine();
+            serviceman.CanIEquipment();
+            Console.WriteLine();
+            RusificatedConscriptUSA rusificated = new RusificatedConscriptUSA();
+            rusificated.CanICommand();
+            Console.WriteLine();
+            rusificated.CanIEquipment();
             Console.ReadKey();
         }
     }

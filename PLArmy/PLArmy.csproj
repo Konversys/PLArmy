@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Adapter\ConscriptUSA.cs" />
+    <Compile Include="Classes\Adapter\RusificatedConscriptUSA.cs" />
     <Compile Include="Classes\Delegate\Conscript.cs" />
     <Compile Include="Classes\Delegate\ContractTechnician.cs" />
     <Compile Include="Classes\Delegate\ExperiencedOfficer.cs" />
@@ -54,6 +56,8 @@
     <Compile Include="Classes\Proxy\Stock.cs" />
     <Compile Include="Enums\ERank.cs" />
     <Compile Include="Examples\Example.cs" />
+    <Compile Include="Interfaces\Adapter\IServiceMan.cs" />
+    <Compile Include="Interfaces\Adapter\IServicemanUSA.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
     <Compile Include="Interfaces\Delegate\IEquipment.cs" />
     <Compile Include="Interfaces\Proxy\IMilitaryStock.cs" />

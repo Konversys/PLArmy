@@ -10,6 +10,8 @@ namespace PLArmy
             Example.GoProxyStock();
             Console.WriteLine();
             Example.GoDelegateServiceman();
+            Console.WriteLine();
+            Example.GoAdapterRusConscriptUSA();
         }
     }
 }

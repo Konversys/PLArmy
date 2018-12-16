@@ -1,4 +1,5 @@
 ﻿using PLArmy.Enums;
+using PLArmy.Interfaces.Adapter;
 using PLArmy.Interfaces.Delegate;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace PLArmy.Classes.Delegate
     /// <summary>
     /// Военнослужащий
     /// </summary>
-    abstract class Serviceman
+    abstract class Serviceman : IServiceMan
     {
         public ERank rank { get; protected set; }
         protected ICommand command { get; set; }
