@@ -45,12 +45,14 @@
     <Compile Include="Classes\Proxy\ProxyStock.cs" />
     <Compile Include="Classes\Proxy\Stock.cs" />
     <Compile Include="Enums\ERank.cs" />
+    <Compile Include="Examples\Example.cs" />
     <Compile Include="Interfaces\IMilitaryStock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Diagrams\Proxy.vpp" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

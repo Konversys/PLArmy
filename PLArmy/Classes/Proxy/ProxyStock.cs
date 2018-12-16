@@ -12,6 +12,7 @@ namespace PLArmy.Classes.Proxy
     {
         ERank rank { get; set; }
         Stock stock { get; set; }
+
         /// <summary>
         /// Прийти на склад
         /// </summary>
