@@ -1,4 +1,5 @@
-﻿using PLArmy.Classes.Proxy;
+﻿using PLArmy.Classes.Delegate;
+using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
 using System;
@@ -11,9 +12,13 @@ namespace PLArmy.Examples
 {
     class Example
     {
-        public static void GoStock()
+        /// <summary>
+        /// Прокси
+        /// </summary>
+        public static void GoProxyStock()
         {
-            IMilitaryStock militaryStock = new ProxyStock(ERank.Captain, 100, 20, 15);
+            Serviceman serviceman = new ExperiencedOfficer();
+            IMilitaryStock militaryStock = new ProxyStock(serviceman, 100, 20, 15);
             militaryStock.TakeArmor(80);
             militaryStock.TakeArmor(10);
             militaryStock.TakeArmor(20);
@@ -21,6 +26,29 @@ namespace PLArmy.Examples
             militaryStock.TakeFood(10);
             militaryStock.TakeWeapon(5);
             militaryStock.TakeWeapon(20);
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// Делегирование
+        /// </summary>
+        public static void GoDelegateServiceman()
+        {
+            Serviceman serviceman;
+
+            serviceman = new Conscript();
+            serviceman.CanICommand();
+            Console.WriteLine();
+            serviceman.CanIEquipment();
+            Console.WriteLine();
+            serviceman = new ExperiencedOfficer();
+            serviceman.CanICommand();
+            Console.WriteLine();
+            serviceman.CanIEquipment();
+            Console.WriteLine();
+            serviceman = new ContractTechnician();
+            serviceman.CanICommand();
+            Console.WriteLine();
+            serviceman.CanIEquipment();
             Console.ReadKey();
         }
     }

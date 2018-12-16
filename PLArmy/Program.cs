@@ -1,4 +1,5 @@
 ﻿using PLArmy.Examples;
+using System;
 
 namespace PLArmy
 {
@@ -6,7 +7,9 @@ namespace PLArmy
     {
         static void Main(string[] args)
         {
-            Example.GoStock();
+            Example.GoProxyStock();
+            Console.WriteLine();
+            Example.GoDelegateServiceman();
         }
     }
 }
