@@ -18,6 +18,9 @@ namespace PLArmy
             //Example.GoCompositeItem();
             //Console.WriteLine();
             //Example.Go();
+            //Console.WriteLine();
+            //Example.GoIteratorPlatoonRollCall();
+            //  Example.Go();
         }
     }
 }

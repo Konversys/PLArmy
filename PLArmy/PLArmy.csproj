@@ -73,6 +73,9 @@
     <Compile Include="Classes\Delegate\LowLevelKnowledge.cs" />
     <Compile Include="Classes\Delegate\LowRank.cs" />
     <Compile Include="Classes\Delegate\Serviceman.cs" />
+    <Compile Include="Classes\Iterator\Platoon.cs" />
+    <Compile Include="Classes\Iterator\RollCall.cs" />
+    <Compile Include="Classes\Iterator\SolderNumerator.cs" />
     <Compile Include="Classes\Proxy\ProxyStock.cs" />
     <Compile Include="Classes\Proxy\Stock.cs" />
     <Compile Include="Classes\Compos\ZIP.cs" />
@@ -85,6 +88,9 @@
     <Compile Include="Interfaces\Decorator\IEmergency.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
     <Compile Include="Interfaces\Delegate\IEquipment.cs" />
+    <Compile Include="Classes\Iterator\Solder.cs" />
+    <Compile Include="Interfaces\Iterator\ISolderIterator.cs" />
+    <Compile Include="Interfaces\Iterator\ISolderNumerable.cs" />
     <Compile Include="Interfaces\Proxy\IMilitaryStock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,5 +106,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

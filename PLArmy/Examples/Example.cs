@@ -2,6 +2,7 @@
 using PLArmy.Classes.Compos;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
+using PLArmy.Classes.Iterator;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
@@ -52,7 +53,9 @@ namespace PLArmy.Examples
             serviceman.CanIEquipment();
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Адаптер
+        /// </summary>
         public static void GoAdapterRusConscriptUSA()
         {
             Serviceman serviceman = new Conscript();
@@ -66,7 +69,9 @@ namespace PLArmy.Examples
             rusificated.CanIEquipment();
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Декоратор
+        /// </summary>
         public static void GoDecoratorFire()
         {
             IEmergency serviceman = new ServicemanResponsible(new ServiceManDuty(new ExperiencedOfficer()));
@@ -86,6 +91,9 @@ namespace PLArmy.Examples
 
             Console.ReadKey();
         }
+        /// <summary>
+        /// Компоновщик
+        /// </summary>
         public static void GoCompositeItem()
         {
             IItem ammo = new Ammo();
@@ -110,6 +118,25 @@ namespace PLArmy.Examples
             sq.AddItem(platoon);
 
             sq.Take(ESubdivision.Рота);
+
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// Итератор
+        /// </summary>
+        public static void GoIteratorPlatoonRollCall()
+        {
+            Platoon platoon = new Platoon("2СИ-15");
+            platoon.AddSolder("Халилов ", "Старший стрелок");
+            platoon.AddSolder("Одилов  ", "Гранатометчик");
+            platoon.AddSolder("Шарков  ", "Помощник гранатометчика");
+            platoon.AddSolder("Лепезин ", "Стрелок");
+            platoon.AddSolder("Дадашев ", "Стрелок");
+            platoon.AddSolder("Нагель  ", "Пулеметчик");
+            platoon.AddSolder("Андрюков", "Снайпер");
+
+            RollCall rollCall = new RollCall();
+            rollCall.Begin(platoon);
 
             Console.ReadKey();
         }
