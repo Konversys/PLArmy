@@ -14,6 +14,10 @@ namespace PLArmy
             //Example.GoAdapterRusConscriptUSA();
             //Console.WriteLine();
             //Example.GoDecoratorFire();
+            //Console.WriteLine();
+            //Example.GoCompositeItem();
+            //Console.WriteLine();
+            //Example.Go();
         }
     }
 }

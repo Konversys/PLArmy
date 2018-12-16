@@ -1,9 +1,11 @@
 ﻿using PLArmy.Classes.Adapter;
+using PLArmy.Classes.Composite;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
+using PLArmy.Interfaces.Composite;
 using PLArmy.Interfaces.Decorator;
 using System;
 using System.Collections.Generic;
@@ -85,6 +87,33 @@ namespace PLArmy.Examples
 
             serviceman = new ServiceManDuty(new ExperiencedOfficer());
             serviceman.FollowInstructionInCaseOfFire();
+
+            Console.ReadKey();
+        }
+        public static void GoCompositeItem()
+        {
+            IItem ammo = new Ammo();
+            IItem fuel = new Fuel();
+            IItem zip = new ZIP();
+
+            Composite tank = new Composite();
+            tank.AddItem(ammo);
+            tank.AddItem(ammo);
+            tank.AddItem(fuel);
+            tank.AddItem(zip);
+
+            Composite platoon = new Composite();
+            platoon.AddItem(tank);
+            platoon.AddItem(tank);
+            platoon.AddItem(tank);
+
+            Composite sq = new Composite();
+            sq.AddItem(platoon);
+            sq.AddItem(platoon);
+            sq.AddItem(platoon);
+            sq.AddItem(platoon);
+
+            sq.Take(ESubdivision.Рота);
 
             Console.ReadKey();
         }
