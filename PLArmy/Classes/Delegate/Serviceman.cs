@@ -1,5 +1,6 @@
 ﻿using PLArmy.Enums;
 using PLArmy.Interfaces.Adapter;
+using PLArmy.Interfaces.Decorator;
 using PLArmy.Interfaces.Delegate;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace PLArmy.Classes.Delegate
     /// <summary>
     /// Военнослужащий
     /// </summary>
-    abstract class Serviceman : IServiceMan
+    abstract class Serviceman : IServiceMan, IEmergency
     {
         public ERank rank { get; protected set; }
         protected ICommand command { get; set; }
@@ -27,6 +28,11 @@ namespace PLArmy.Classes.Delegate
         {
             equipment.Repair();
             equipment.Break();
+        }
+
+        public void FollowInstructionInCaseOfFire()
+        {
+            Console.Write(" Я покину помещение.");
         }
     }
 }

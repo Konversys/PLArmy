@@ -1,8 +1,10 @@
 ﻿using PLArmy.Classes.Adapter;
+using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
 using PLArmy.Interfaces;
+using PLArmy.Interfaces.Decorator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +66,26 @@ namespace PLArmy.Examples
             rusificated.CanICommand();
             Console.WriteLine();
             rusificated.CanIEquipment();
+            Console.ReadKey();
+        }
+
+        public static void GoDecoratorFire()
+        {
+            IEmergency serviceman = new ServicemanResponsible(new ServiceManDuty(new ExperiencedOfficer()));
+            serviceman.FollowInstructionInCaseOfFire();
+            Console.WriteLine();
+
+            serviceman = new ServiceManDuty(new ContractTechnician());
+            serviceman.FollowInstructionInCaseOfFire();
+            Console.WriteLine();
+
+            serviceman = new Conscript();
+            serviceman.FollowInstructionInCaseOfFire();
+            Console.WriteLine();
+
+            serviceman = new ServiceManDuty(new ExperiencedOfficer());
+            serviceman.FollowInstructionInCaseOfFire();
+
             Console.ReadKey();
         }
     }

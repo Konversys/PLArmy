@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Classes\Adapter\ConscriptUSA.cs" />
     <Compile Include="Classes\Adapter\RusificatedConscriptUSA.cs" />
+    <Compile Include="Classes\Decorator\ServicemanDecorator.cs" />
+    <Compile Include="Classes\Decorator\ServiceManDuty.cs" />
+    <Compile Include="Classes\Decorator\ServicemanResponsible.cs" />
     <Compile Include="Classes\Delegate\Conscript.cs" />
     <Compile Include="Classes\Delegate\ContractTechnician.cs" />
     <Compile Include="Classes\Delegate\ExperiencedOfficer.cs" />
@@ -58,6 +61,7 @@
     <Compile Include="Examples\Example.cs" />
     <Compile Include="Interfaces\Adapter\IServiceMan.cs" />
     <Compile Include="Interfaces\Adapter\IServicemanUSA.cs" />
+    <Compile Include="Interfaces\Decorator\IEmergency.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
     <Compile Include="Interfaces\Delegate\IEquipment.cs" />
     <Compile Include="Interfaces\Proxy\IMilitaryStock.cs" />
