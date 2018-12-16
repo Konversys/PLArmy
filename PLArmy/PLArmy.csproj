@@ -46,6 +46,7 @@
     <Compile Include="Classes\Adapter\RusificatedConscriptUSA.cs" />
     <Compile Include="Classes\Compos\Ammo.cs" />
     <Compile Include="Classes\Compos\Composite.cs" />
+    <Compile Include="Classes\Compos\Fuel.cs" />
     <Compile Include="Classes\Decorator\ServicemanDecorator.cs" />
     <Compile Include="Classes\Decorator\ServiceManDuty.cs" />
     <Compile Include="Classes\Decorator\ServicemanResponsible.cs" />
@@ -69,8 +70,6 @@
     <Compile Include="Interfaces\Decorator\IEmergency.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
     <Compile Include="Interfaces\Delegate\IEquipment.cs" />
-    <Compile Include="Interfaces\Iterator\IItemNumerable.cs" />
-    <Compile Include="Interfaces\Iterator\IItemIterator.cs" />
     <Compile Include="Interfaces\Proxy\IMilitaryStock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
