@@ -8,18 +8,13 @@ namespace PLArmy
         static void Main(string[] args)
         {
             //Example.GoProxyStock();
-            //Console.WriteLine();
             //Example.GoDelegateServiceman();
-            //Console.WriteLine();
             //Example.GoAdapterRusConscriptUSA();
-            //Console.WriteLine();
             //Example.GoDecoratorFire();
-            //Console.WriteLine();
             //Example.GoCompositeItem();
-            //Console.WriteLine();
-            //Console.WriteLine();
             //Example.GoIteratorPlatoonRollCall();
-            Example.GoBridgeStartWar();
+            //Example.GoBridgeStartWar();
+            Example.GoFlyweightPlatoonSpecialty();
         }
     }
 }

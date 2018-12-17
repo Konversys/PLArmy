@@ -78,6 +78,11 @@
     <Compile Include="Classes\Delegate\LowLevelKnowledge.cs" />
     <Compile Include="Classes\Delegate\LowRank.cs" />
     <Compile Include="Classes\Delegate\Serviceman.cs" />
+    <Compile Include="Classes\Flyweight\AirdefensePlatoon.cs" />
+    <Compile Include="Classes\Flyweight\ConnectionPlatoon.cs" />
+    <Compile Include="Classes\Flyweight\MedicalPlatoon.cs" />
+    <Compile Include="Classes\Flyweight\PlatoonFactory.cs" />
+    <Compile Include="Classes\Flyweight\TankPlatoon.cs" />
     <Compile Include="Classes\Iterator\Platoon.cs" />
     <Compile Include="Classes\Iterator\RollCall.cs" />
     <Compile Include="Classes\Iterator\SolderNumerator.cs" />
@@ -112,6 +117,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\Flyweight\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

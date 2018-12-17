@@ -3,6 +3,7 @@ using PLArmy.Classes.Bridge;
 using PLArmy.Classes.Compos;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
+using PLArmy.Classes.Flyweight;
 using PLArmy.Classes.Iterator;
 using PLArmy.Classes.Proxy;
 using PLArmy.Enums;
@@ -141,7 +142,9 @@ namespace PLArmy.Examples
 
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Мост
+        /// </summary>
         public static void GoBridgeStartWar()
         {
             Platoon platoon = new Platoon("2СИ-15");
@@ -166,6 +169,37 @@ namespace PLArmy.Examples
             war.Respite();
             war.Attack();
             war.Report();
+
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// Приспособленец
+        /// </summary>
+        public static void GoFlyweightPlatoonSpecialty()
+        {
+            PlatoonFactory platoonFactory = new PlatoonFactory();
+            Platoon platoon = platoonFactory.GetPlatoon("Танкисты");
+            if (platoon != null)
+            {
+                platoon.SetTitleAndConnect("2Т-15");
+                platoon.SetTitleAndConnect("4Т-16");
+                platoon.SetTitleAndConnect("1Т-18");
+            }
+
+            platoon = platoonFactory.GetPlatoon("Артиллеристы");
+            if (platoon != null)
+                platoon.SetTitleAndConnect("3М-08");
+
+            platoon = platoonFactory.GetPlatoon("Связисты");
+            if (platoon != null)
+                platoon.SetTitleAndConnect("2С-12");
+
+            platoon = platoonFactory.GetPlatoon("Медицинский");
+            if (platoon != null)
+            {
+                platoon.SetTitleAndConnect("5М-17");
+                platoon.SetTitleAndConnect("5М-18");
+            }
 
             Console.ReadKey();
         }

@@ -9,6 +9,14 @@ namespace PLArmy.Classes.Iterator
     class Platoon : ISolderNumerable
     {
         /// <summary>
+        /// Приспособленец
+        /// Задать Имя взвода и присоединиться
+        /// </summary>
+        public virtual void SetTitleAndConnect(string title)
+        {
+            this.title = title;
+        }
+        /// <summary>
         /// Название взвода
         /// </summary>
         public string title { get; private set; }
@@ -16,6 +24,10 @@ namespace PLArmy.Classes.Iterator
         /// Список взвода
         /// </summary>
         List<Solder> solders;
+        public Platoon()
+        {
+            this.solders = new List<Solder>();
+        }
         public Platoon(string title)
         {
             this.solders = new List<Solder>();
