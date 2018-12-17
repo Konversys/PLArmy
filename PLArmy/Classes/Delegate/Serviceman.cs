@@ -19,7 +19,7 @@ namespace PLArmy.Classes.Delegate
             command.ExecuteOrder();
             command.GiveOrder();
         }
-
+        
         public void CanIEquipment()
         {
             equipment.Repair();

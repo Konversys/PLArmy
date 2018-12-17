@@ -1,4 +1,5 @@
 ﻿using PLArmy.Classes.Adapter;
+using PLArmy.Classes.Bridge;
 using PLArmy.Classes.Compos;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
@@ -137,6 +138,34 @@ namespace PLArmy.Examples
 
             RollCall rollCall = new RollCall();
             rollCall.Begin(platoon);
+
+            Console.ReadKey();
+        }
+
+        public static void GoBridgeStartWar()
+        {
+            Platoon platoon = new Platoon("2СИ-15");
+            platoon.AddSolder("Халилов ", "Старший стрелок");
+            platoon.AddSolder("Одилов  ", "Гранатометчик");
+            platoon.AddSolder("Шарков  ", "Помощник гранатометчика");
+            platoon.AddSolder("Лепезин ", "Стрелок");
+            platoon.AddSolder("Дадашев ", "Стрелок");
+            platoon.AddSolder("Нагель  ", "Пулеметчик");
+            platoon.AddSolder("Андрюков", "Снайпер");
+
+            RollCall rollCall = new RollCall();
+            rollCall.Begin(platoon);
+
+            Console.WriteLine("\nВзвод {0} готов к войне:\n", platoon.title);
+
+            War war = new GoodConditions(new PlanA());
+            war.Attack();
+            war.Respite();
+            war.BearALoss();
+            war.plan = new PlanB();
+            war.Respite();
+            war.Attack();
+            war.Report();
 
             Console.ReadKey();
         }

@@ -59,6 +59,11 @@
   <ItemGroup>
     <Compile Include="Classes\Adapter\ConscriptUSA.cs" />
     <Compile Include="Classes\Adapter\RusificatedConscriptUSA.cs" />
+    <Compile Include="Classes\Bridge\BadConditions.cs" />
+    <Compile Include="Classes\Bridge\War.cs" />
+    <Compile Include="Classes\Bridge\PlanA.cs" />
+    <Compile Include="Classes\Bridge\GoodConditions.cs" />
+    <Compile Include="Classes\Bridge\PlanB.cs" />
     <Compile Include="Classes\Compos\Ammo.cs" />
     <Compile Include="Classes\Compos\Composite.cs" />
     <Compile Include="Classes\Compos\Fuel.cs" />
@@ -84,6 +89,7 @@
     <Compile Include="Examples\Example.cs" />
     <Compile Include="Interfaces\Adapter\IServiceMan.cs" />
     <Compile Include="Interfaces\Adapter\IServicemanUSA.cs" />
+    <Compile Include="Interfaces\Bridge\IPlan.cs" />
     <Compile Include="Interfaces\Compos\IItem.cs" />
     <Compile Include="Interfaces\Decorator\IEmergency.cs" />
     <Compile Include="Interfaces\Delegate\ICommand.cs" />
