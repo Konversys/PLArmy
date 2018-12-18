@@ -209,9 +209,23 @@ namespace PLArmy.Examples
         /// </summary>
         public static void GoFacadePrepareSq()
         {
+            Sq sq = new Sq();
             Colonel colonel = new Colonel("Пикалов А.В", "Командир роты");
             Console.WriteLine("{0} {1} {2} Снаряжает свое подразделение:", colonel.post, colonel.rank, colonel.name);
-            colonel.ToManage(new Sq());
+            colonel.ToManage(sq);
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// Information Expert
+        /// </summary>
+        public static void GoInformationExpertGetSolderCount()
+        {
+            Sq sq = new Sq();
+            Colonel colonel = new Colonel("Пикалов А.В", "Командир роты");
+            Console.WriteLine("{0} {1} {2} Снаряжает свое подразделение:", colonel.post, colonel.rank, colonel.name);
+            colonel.ToManage(sq);
+            Console.WriteLine();
+            colonel.GetSqSolderCount(sq);
             Console.ReadKey();
         }
     }

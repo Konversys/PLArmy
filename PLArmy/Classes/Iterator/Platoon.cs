@@ -43,6 +43,14 @@ namespace PLArmy.Classes.Iterator
             this.title = title;
         }
         /// <summary>
+        /// Количество бойцов во взводе
+        /// </summary>
+        /// <returns></returns>
+        public int GetSolderCount()
+        {
+            return solders.Count;
+        }
+        /// <summary>
         /// Количество бойцов
         /// </summary>
         int ISolderNumerable.Count

@@ -18,7 +18,25 @@ namespace PLArmy.Classes.Facade
     /// </summary>
     class Sq
     {
-        Composite sq { get; set; }
+        public Sq()
+        {
+            this.sq = new List<Platoon>();
+        }
+        /// <summary>
+        /// Подсчитать кол-во бойцов в роте
+        /// </summary>
+        /// <returns></returns>
+        public int GetSolderCount()
+        {
+            int count = 0;
+            foreach (var item in sq)
+            {
+                count += item.GetSolderCount();
+            }
+            return count;
+        }
+
+        List<Platoon> sq { get; set; }
         /// <summary>
         /// Собрать роту
         /// </summary>
@@ -53,8 +71,7 @@ namespace PLArmy.Classes.Facade
             p2si13.AddSolder("Татьков", "Командир экипажа 3-го танка");
             rollCall.Begin(p2si13);
 
-            sq = new Composite();
-            sq.AddItem(p2si13);
+            sq.Add(p2si13);
             Console.WriteLine();
 
             Platoon p1t16 = new Platoon();
@@ -78,7 +95,7 @@ namespace PLArmy.Classes.Facade
             p1t16.AddSolder("Свиридов", "Командир экипажа 3-го танка");
 
             rollCall.Begin(p1t16);
-            sq.AddItem(p1t16);
+            sq.Add(p1t16);
             Console.WriteLine();
 
             Platoon p2si15 = new Platoon();
@@ -102,9 +119,13 @@ namespace PLArmy.Classes.Facade
             p2si15.AddSolder("Даулетович", "Командир экипажа 3-го танка");
 
             rollCall.Begin(p2si15);
-            sq.AddItem(p2si15);
+            sq.Add(p2si15);
             Console.WriteLine();
-            sq.Take();
+
+            foreach (var item in sq)
+            {
+                item.Take();
+            }
         }
         /// <summary>
         /// Добавить доп. взводы
@@ -114,13 +135,13 @@ namespace PLArmy.Classes.Facade
             PlatoonFactory platoonFactory = new PlatoonFactory();
             Platoon platoon = platoonFactory.GetPlatoonClear("Артиллеристы");
             platoon.SetTitleAndConnect("5F-13");
-            sq.AddItem(platoon);
+            sq.Add(platoon);
             platoon = platoonFactory.GetPlatoon("Медицинский");
             platoon.SetTitleAndConnect("5М-17");
-            sq.AddItem(platoon);
+            sq.Add(platoon);
             platoon = platoonFactory.GetPlatoon("Связисты");
             platoon.SetTitleAndConnect("3C-17");
-            sq.AddItem(platoon);
+            sq.Add(platoon);
         }
     }
 }

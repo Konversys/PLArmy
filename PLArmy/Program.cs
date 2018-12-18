@@ -15,7 +15,9 @@ namespace PLArmy
             //Example.GoIteratorPlatoonRollCall();
             //Example.GoBridgeStartWar();
             //Example.GoFlyweightPlatoonSpecialty();
-            Example.GoFacadePrepareSq();
+            //Example.GoFacadePrepareSq();
+            //Example.GoInformationExpertGetSolderCount();
+            //Example.
         }
     }
 }

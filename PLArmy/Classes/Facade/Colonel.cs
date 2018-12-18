@@ -26,5 +26,13 @@ namespace PLArmy.Classes.Facade
             sq.Equip();
             sq.AddSubPlatoon();
         }
+        /// <summary>
+        /// Узнать кол-во бойцов в роте
+        /// </summary>
+        /// <param name="sq"></param>
+        public void GetSqSolderCount(Sq sq)
+        {
+            Console.WriteLine(" В роте {0} бойцов", sq.GetSolderCount());
+        }
     }
 }
