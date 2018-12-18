@@ -21,9 +21,10 @@ namespace PLArmy.Classes.Iterator
         /// Приспособленец
         /// Задать Имя взвода и присоединиться
         /// </summary>
-        public virtual void SetTitleAndConnect(string title)
+        public virtual string SetTitleAndConnect(string title)
         {
             this.title = title;
+            return title;
         }
         /// <summary>
         /// Название взвода
@@ -94,12 +95,14 @@ namespace PLArmy.Classes.Iterator
         }
 
         List<IItem> components = new List<IItem>();
-        public void Take(ESubdivision subdivision = ESubdivision.Взвод)
+        public List<string> Take(ESubdivision subdivision = ESubdivision.Взвод)
         {
+            List<string> list = new List<string>();
             foreach (var item in components)
             {
-                item.Take(subdivision - 1);
+                list.AddRange(item.Take(subdivision - 1));
             }
+            return list;
         }
 
         /// <summary>

@@ -21,18 +21,20 @@ namespace PLArmy.Classes.Facade
             equipment = new HighLevelKnowledge();
             rank = ERank.Colonel;
         }
-        public void ToManage(Sq sq)
+        public List<string> ToManage(Sq sq)
         {
-            sq.Equip();
-            sq.AddSubPlatoon();
+            List<string> vs = new List<string>();
+            vs.AddRange(sq.Equip());
+            vs.AddRange(sq.AddSubPlatoon());
+            return vs;
         }
         /// <summary>
         /// Узнать кол-во бойцов в роте
         /// </summary>
         /// <param name="sq"></param>
-        public void GetSqSolderCount(Sq sq)
+        public string GetSqSolderCount(Sq sq)
         {
-            Console.WriteLine(" В роте {0} бойцов", sq.GetSolderCount());
+            return String.Format(" В роте {0} бойцов", sq.GetSolderCount());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using PLArmy.Interfaces.Adapter;
+﻿using PLArmy.Interfaces;
+using PLArmy.Interfaces.Adapter;
 using PLArmy.Interfaces.Delegate;
 using System;
 using System.Collections.Generic;
@@ -15,23 +16,21 @@ namespace PLArmy.Classes.Adapter
     class RusificatedConscriptUSA : IServiceMan
     {
         ConscriptUSA conscript { get; set; }
-
+        public string Greeting { get; private set; }
         public RusificatedConscriptUSA()
         {
-            Console.WriteLine("Hello! I'm Rusificated Conscript from USA: ");
+            this.Greeting = "Hello! I'm Rusificated Conscript from USA: ";
             this.conscript = new ConscriptUSA();
         }       
 
-        public void CanICommand()
+        public string[] CanICommand()
         {
-            this.conscript.SetOrder();
-            this.conscript.GetOrder();
+            return new string[] { this.conscript.SetOrder(), this.conscript.GetOrder() };
         }
 
-        public void CanIEquipment()
+        public string[] CanIEquipment()
         {
-            this.conscript.Repair();
-            this.conscript.Break();
+            return new string[] { this.conscript.Break(), this.conscript.Repair() };
         }
     }
 }

@@ -5,7 +5,7 @@
     /// </summary>
     interface ICommand
     {
-        void GiveOrder();
-        void ExecuteOrder();
+        string GiveOrder();
+        string ExecuteOrder();
     }
 }

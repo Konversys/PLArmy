@@ -12,6 +12,7 @@ using PLArmy.Interfaces;
 using PLArmy.Interfaces.Compos;
 using PLArmy.Interfaces.Decorator;
 using System;
+using System.Collections.Generic;
 
 namespace PLArmy.Examples
 {
@@ -24,13 +25,13 @@ namespace PLArmy.Examples
         {
             Serviceman serviceman = new ExperiencedOfficer();
             IMilitaryStock militaryStock = new ProxyStock(serviceman, 100, 20, 15);
-            militaryStock.TakeArmor(80);
-            militaryStock.TakeArmor(10);
-            militaryStock.TakeArmor(20);
-            militaryStock.TakeFood(30);
-            militaryStock.TakeFood(10);
-            militaryStock.TakeWeapon(5);
-            militaryStock.TakeWeapon(20);
+            Print(militaryStock.TakeArmor(80));
+            Print(militaryStock.TakeArmor(10));
+            Print(militaryStock.TakeArmor(20));
+            Print(militaryStock.TakeFood(30));
+            Print(militaryStock.TakeFood(10));
+            Print(militaryStock.TakeWeapon(5));
+            Print(militaryStock.TakeWeapon(20));
             Console.ReadKey();
         }
         /// <summary>
@@ -41,19 +42,22 @@ namespace PLArmy.Examples
             Serviceman serviceman;
 
             serviceman = new Conscript();
-            serviceman.CanICommand();
+            Print(serviceman.Greeting);
+            Print(serviceman.CanICommand());
             Console.WriteLine();
-            serviceman.CanIEquipment();
+            Print(serviceman.CanIEquipment());
             Console.WriteLine();
             serviceman = new ExperiencedOfficer();
-            serviceman.CanICommand();
+            Print(serviceman.Greeting);
+            Print(serviceman.CanICommand());
             Console.WriteLine();
-            serviceman.CanIEquipment();
+            Print(serviceman.CanIEquipment());
             Console.WriteLine();
             serviceman = new ContractTechnician();
-            serviceman.CanICommand();
+            Print(serviceman.Greeting);
+            Print(serviceman.CanICommand());
             Console.WriteLine();
-            serviceman.CanIEquipment();
+            Print(serviceman.CanIEquipment());
             Console.ReadKey();
         }
         /// <summary>
@@ -62,14 +66,14 @@ namespace PLArmy.Examples
         public static void GoAdapterRusConscriptUSA()
         {
             Serviceman serviceman = new Conscript();
-            serviceman.CanICommand();
-            Console.WriteLine();
-            serviceman.CanIEquipment();
+            Print(serviceman.Greeting);
+            Print(serviceman.CanICommand());
+            Print(serviceman.CanIEquipment());
             Console.WriteLine();
             RusificatedConscriptUSA rusificated = new RusificatedConscriptUSA();
-            rusificated.CanICommand();
-            Console.WriteLine();
-            rusificated.CanIEquipment();
+            Print(rusificated.Greeting);
+            Print(rusificated.CanICommand());
+            Print(rusificated.CanIEquipment());
             Console.ReadKey();
         }
         /// <summary>
@@ -78,19 +82,23 @@ namespace PLArmy.Examples
         public static void GoDecoratorFire()
         {
             IEmergency serviceman = new ServicemanResponsible(new ServiceManDuty(new ExperiencedOfficer()));
-            serviceman.FollowInstructionInCaseOfFire();
+            Print(serviceman.Greeting);
+            Print(serviceman.FollowInstructionInCaseOfFire());
             Console.WriteLine();
 
             serviceman = new ServiceManDuty(new ContractTechnician());
-            serviceman.FollowInstructionInCaseOfFire();
+            Print(serviceman.Greeting);
+            Print(serviceman.FollowInstructionInCaseOfFire());
             Console.WriteLine();
 
             serviceman = new Conscript();
-            serviceman.FollowInstructionInCaseOfFire();
+            Print(serviceman.Greeting);
+            Print(serviceman.FollowInstructionInCaseOfFire());
             Console.WriteLine();
 
             serviceman = new ServiceManDuty(new ExperiencedOfficer());
-            serviceman.FollowInstructionInCaseOfFire();
+            Print(serviceman.Greeting);
+            Print(serviceman.FollowInstructionInCaseOfFire());
 
             Console.ReadKey();
         }
@@ -120,7 +128,7 @@ namespace PLArmy.Examples
             sq.AddItem(platoon);
             sq.AddItem(platoon);
 
-            sq.Take(ESubdivision.Рота);
+            Print(sq.Take(ESubdivision.Рота));
 
             Console.ReadKey();
         }
@@ -139,7 +147,7 @@ namespace PLArmy.Examples
             platoon.AddSolder("Андрюков", "Снайпер");
 
             RollCall rollCall = new RollCall();
-            rollCall.Begin(platoon);
+            Print(rollCall.Begin(platoon));
 
             Console.ReadKey();
         }
@@ -158,18 +166,22 @@ namespace PLArmy.Examples
             platoon.AddSolder("Андрюков", "Снайпер");
 
             RollCall rollCall = new RollCall();
-            rollCall.Begin(platoon);
+            Print(rollCall.Begin(platoon));
 
             Console.WriteLine("\nВзвод {0} готов к войне:\n", platoon.title);
 
             War war = new GoodConditions(new PlanA());
-            war.Attack();
-            war.Respite();
-            war.BearALoss();
+            Print(war.plan.Greeting);
+            Print(war.Greeting);
+            Print(war.Attack());
+            Print(war.Respite());
+            Print(war.BearALoss());
             war.plan = new PlanB();
-            war.Respite();
-            war.Attack();
-            war.Report();
+            Print(war.plan.Greeting);
+            Print(war.Greeting);
+            Print(war.Respite());
+            Print(war.Attack());
+            Print(war.Report());
 
             Console.ReadKey();
         }
@@ -223,10 +235,30 @@ namespace PLArmy.Examples
             Sq sq = new Sq();
             Colonel colonel = new Colonel("Пикалов А.В", "Командир роты");
             Console.WriteLine("{0} {1} {2} Снаряжает свое подразделение:", colonel.post, colonel.rank, colonel.name);
-            colonel.ToManage(sq);
+            Print(colonel.ToManage(sq));
             Console.WriteLine();
             colonel.GetSqSolderCount(sq);
             Console.ReadKey();
+        }
+
+        static void Print(string[] array)
+        {
+            foreach (var item in array)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        static void Print(string line)
+        {
+            Console.WriteLine(line);
+        }
+
+        static void Print(List<string> list)
+        {
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

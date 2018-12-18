@@ -8,14 +8,14 @@ namespace PLArmy.Classes.Delegate
     /// </summary>
     class HighLevelKnowledge : IEquipment
     {
-        public void Break()
+        public string Break()
         {
-            Console.WriteLine("     Я слишком опытен чтобы ломать технику");
+            return String.Format("     Я слишком опытен чтобы ломать технику");
         }
 
-        public void Repair()
+        public string Repair()
         {
-            Console.WriteLine("     Я могу легко починить технику");
+            return String.Format("     Я могу легко починить технику");
         }
     }
 }

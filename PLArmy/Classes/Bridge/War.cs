@@ -1,4 +1,5 @@
-﻿using PLArmy.Interfaces.Bridge;
+﻿using PLArmy.Interfaces;
+using PLArmy.Interfaces.Bridge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,35 +16,36 @@ namespace PLArmy.Classes.Bridge
     abstract class War
     {
         public IPlan plan { get; set; }
+        public string Greeting { get; private set; }
         public War(IPlan plan)
         {
-            Console.WriteLine("Начинаем войну");
+            this.Greeting = String.Format("Начинаем войну");
             this.plan = plan;
         }
         /// <summary>
         /// Атаковать
         /// </summary>
-        public void Attack()
+        public string Attack()
         {
-            plan.Attack();
+            return plan.Attack();
         }
         /// <summary>
         /// Передышка/Занять позицию
         /// </summary>
-        public void Respite()
+        public string Respite()
         {
-            plan.TakePosition();
+            return plan.TakePosition();
         }
         /// <summary>
         /// Нести потери
         /// </summary>
-        public void BearALoss()
+        public string BearALoss()
         {
-            plan.Retreat();
+            return plan.Retreat();
         }
         /// <summary>
         /// Отчет о статусе войны
         /// </summary>
-        public abstract void Report();
+        public abstract string Report();
     }
 }

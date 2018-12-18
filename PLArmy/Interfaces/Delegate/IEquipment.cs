@@ -5,7 +5,7 @@
     /// </summary>
     interface IEquipment
     {
-        void Repair();
-        void Break();
+        string Repair();
+        string Break();
     }
 }

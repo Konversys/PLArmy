@@ -1,4 +1,5 @@
 ﻿using PLArmy.Enums;
+using System.Collections.Generic;
 
 namespace PLArmy.Interfaces.Compos
 {
@@ -11,6 +12,6 @@ namespace PLArmy.Interfaces.Compos
         /// Взять предмет для...
         /// </summary>
         /// <param name="subdivision">Подразделение для предмета</param>
-        void Take(ESubdivision subdivision);
+        List<string> Take(ESubdivision subdivision);
     }
 }

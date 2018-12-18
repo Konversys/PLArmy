@@ -1,6 +1,7 @@
 ﻿using PLArmy.Enums;
 using PLArmy.Interfaces.Compos;
 using System;
+using System.Collections.Generic;
 
 namespace PLArmy.Classes.Compos
 {
@@ -9,9 +10,11 @@ namespace PLArmy.Classes.Compos
     /// </summary>
     class ZIP : IItem
     {
-        public void Take(ESubdivision subdivision)
+        public List<string> Take(ESubdivision subdivision)
         {
-            Console.WriteLine("             Вы взяли комплект ЗИП");
+            List<string> vs = new List<string>();
+            vs.Add(String.Format("Вы взяли комплект ЗИП"));
+            return vs;
         }
     }
 }

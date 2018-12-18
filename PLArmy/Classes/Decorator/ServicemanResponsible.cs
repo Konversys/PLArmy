@@ -11,20 +11,19 @@ namespace PLArmy.Classes.Decorator
     {
         public ServicemanResponsible(IEmergency serviceman) : base(serviceman)
         {
-
+            this.Greeting = "Я Дежурный офицер";
         }
 
-        public void MakeReport()
+        public string MakeReport()
         {
-            Console.Write(" Я несу ответственность за проишествие.");
+            return String.Format(" Я несу ответственность за проишествие.");
         }
         /// <summary>
         /// Несет ответственность + доп. функции
         /// </summary>
-        public override void FollowInstructionInCaseOfFire()
+        public override string FollowInstructionInCaseOfFire()
         {
-            MakeReport();
-            base.FollowInstructionInCaseOfFire();
+            return MakeReport() + base.FollowInstructionInCaseOfFire();
         }
     }
 }

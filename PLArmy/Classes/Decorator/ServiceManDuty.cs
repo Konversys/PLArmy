@@ -11,20 +11,19 @@ namespace PLArmy.Classes.Decorator
     {
         public ServiceManDuty(IEmergency serviceman) : base(serviceman)
         {
-            
+            this.Greeting = "Я Дежурный по казарме";
         }
 
-        public void SaveItems()
+        public string SaveItems()
         {
-            Console.Write(" Я буду спасать вещи.");
+            return String.Format(" Я буду спасать вещи");
         }
         /// <summary>
         /// Выносит вещи + доп. функции
         /// </summary>
-        public override void FollowInstructionInCaseOfFire()
+        public override string FollowInstructionInCaseOfFire()
         {
-            SaveItems();
-            base.FollowInstructionInCaseOfFire();
+            return SaveItems() + base.FollowInstructionInCaseOfFire();
         }
     }
 }

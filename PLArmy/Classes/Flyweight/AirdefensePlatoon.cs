@@ -16,9 +16,9 @@ namespace PLArmy.Classes.Flyweight
         {
         }
 
-        public override void SetTitleAndConnect(string title)
+        public override string SetTitleAndConnect(string title)
         {
-            Console.WriteLine(" Арт. взвод {0} присоединился к батальону", title);
+            return String.Format(" Арт. взвод {0} присоединился к батальону", title);
         }
     }
 }

@@ -8,14 +8,14 @@ namespace PLArmy.Classes.Delegate
     /// </summary>
     class HighRank : ICommand
     {
-        public void ExecuteOrder()
+        public string ExecuteOrder()
         {
-            Console.WriteLine("     Мое звание позволяет мне отдавать приказы"); 
+            return String.Format("     Мое звание позволяет мне отдавать приказы"); 
         }
 
-        public void GiveOrder()
+        public string GiveOrder()
         {
-            Console.WriteLine("     Мало кто может отдать мне приказ");
+            return String.Format("     Мало кто может отдать мне приказ");
         }
     }
 }

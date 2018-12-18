@@ -12,7 +12,7 @@ namespace PLArmy.Classes.Delegate
         /// </summary>
         public Conscript()
         {
-            Console.WriteLine("Я срочник-новобранец:");
+            this.Greeting = String.Format("Я срочник-новобранец:");
             equipment = new LowLevelKnowledge();
             command = new LowRank();
             rank = ERank.Soldier;

@@ -5,11 +5,11 @@
     /// </summary>
     interface IServicemanUSA
     { 
-        void Attack();
-        void Retreat();
-        void SetOrder();
-        void GetOrder();
-        void Repair();
-        void Break();
+        string Attack();
+        string Retreat();
+        string SetOrder();
+        string GetOrder();
+        string Repair();
+        string Break();
     }
 }

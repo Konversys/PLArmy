@@ -15,14 +15,15 @@ namespace PLArmy.Interfaces.Bridge
         /// <summary>
         /// Атаковать
         /// </summary>
-        void Attack();
+        string Attack();
         /// <summary>
         /// Отступать
         /// </summary>
-        void Retreat();
+        string Retreat();
         /// <summary>
         /// Занять позицию
         /// </summary>
-        void TakePosition();
+        string TakePosition();
+        string Greeting { get; }
     }
 }

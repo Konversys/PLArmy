@@ -12,7 +12,7 @@ namespace PLArmy.Classes.Delegate
         /// </summary>
         public ContractTechnician()
         {
-            Console.WriteLine("Я контрактник - выпускник технического училища:");
+            this.Greeting = String.Format("Я контрактник - выпускник технического училища:");
             command = new LowRank();
             equipment = new HighLevelKnowledge();
             rank = ERank.Sergeant;

@@ -1,12 +1,14 @@
-﻿namespace PLArmy.Interfaces.Adapter
+﻿using System.Collections.Generic;
+
+namespace PLArmy.Interfaces.Adapter
 {
     /// <summary>
     /// Интерфейс возможностей солдата
     /// </summary>
     interface IServiceMan
     {
-        void CanICommand();
+        string[] CanICommand();
 
-        void CanIEquipment();
+        string[] CanIEquipment();
     }
 }

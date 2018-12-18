@@ -9,6 +9,7 @@
         /// <summary>
         /// Инструкции на случай пожара
         /// </summary>
-        void FollowInstructionInCaseOfFire();
+        string FollowInstructionInCaseOfFire();
+        string Greeting { get; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PLArmy.Enums;
+using PLArmy.Interfaces;
 using PLArmy.Interfaces.Adapter;
 using PLArmy.Interfaces.Decorator;
 using PLArmy.Interfaces.Delegate;
@@ -12,23 +13,24 @@ namespace PLArmy.Classes.Delegate
     abstract class Serviceman : IServiceMan, IEmergency
     {
         public ERank rank { get; protected set; }
+
+        public string Greeting { get; protected set; } 
+
         protected ICommand command { get; set; }
         protected IEquipment equipment { get; set; }
-        public void CanICommand()
+        public string[] CanICommand()
         {
-            command.ExecuteOrder();
-            command.GiveOrder();
+            return new string[] { command.ExecuteOrder(), command.GiveOrder() };
         }
         
-        public void CanIEquipment()
+        public string[] CanIEquipment()
         {
-            equipment.Repair();
-            equipment.Break();
+            return new string[] { equipment.Repair(), equipment.Break() };
         }
 
-        public void FollowInstructionInCaseOfFire()
+        public string FollowInstructionInCaseOfFire()
         {
-            Console.Write(" Я покину помещение.");
+            return String.Format(" Я покину помещение.");
         }
     }
 }

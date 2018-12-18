@@ -12,7 +12,7 @@ namespace PLArmy.Classes.Delegate
         /// </summary>
         public ExperiencedOfficer()
         {
-            Console.WriteLine("Я опытный офицер:");
+            this.Greeting = String.Format("Я опытный офицер:");
             command = new HighRank();
             equipment = new HighLevelKnowledge();
             rank = ERank.Major;

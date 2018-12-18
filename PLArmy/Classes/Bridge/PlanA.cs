@@ -1,4 +1,5 @@
-﻿using PLArmy.Interfaces.Bridge;
+﻿using PLArmy.Interfaces;
+using PLArmy.Interfaces.Bridge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,25 @@ namespace PLArmy.Classes.Bridge
     /// </summary>
     class PlanA : IPlan
     {
+        public string Greeting { get; private set; }
         public PlanA()
         {
-            Console.WriteLine(" Используем план А");
+             this.Greeting = String.Format(" Используем план А");
         }
 
-        public void Attack()
+        public string Attack()
         {
-            Console.WriteLine("     Атакуем с левого фланга");
+            return String.Format("     Атакуем с левого фланга");
         }
 
-        public void Retreat()
+        public string Retreat()
         {
-            Console.WriteLine("     Отступаем через деревню. Подрываем мост после себя");
+            return String.Format("     Отступаем через деревню. Подрываем мост после себя");
         }
 
-        public void TakePosition()
+        public string TakePosition()
         {
-            Console.WriteLine("     Занять позицию у подножья горы");
+            return String.Format("     Занять позицию у подножья горы");
         }
     }
 }

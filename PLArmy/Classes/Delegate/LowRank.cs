@@ -8,14 +8,14 @@ namespace PLArmy.Classes.Delegate
     /// </summary>
     class LowRank : ICommand
     {
-        public void ExecuteOrder()
+        public string ExecuteOrder()
         {
-            Console.WriteLine("     Мое звание слишком маленькое чтобы отдавать приказы");
+            return String.Format("     Мое звание слишком маленькое чтобы отдавать приказы");
         }
 
-        public void GiveOrder()
+        public string GiveOrder()
         {
-            Console.WriteLine("     Я всегда готов выполнить приказ");
+            return String.Format("     Я всегда готов выполнить приказ");
         }
     }
 }

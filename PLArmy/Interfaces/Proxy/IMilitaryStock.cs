@@ -6,16 +6,16 @@
         /// Взять еду
         /// </summary>
         /// <param name="count">Кол-во</param>
-        void TakeFood(int count);
+        string TakeFood(int count);
         /// <summary>
         /// Взять броню
         /// </summary>
         /// <param name="count">Кол-во</param>
-        void TakeArmor(int count);
+        string TakeArmor(int count);
         /// <summary>
         /// Взять оружие
         /// </summary>
         /// <param name="count">Кол-во</param>
-        void TakeWeapon(int count);
+        string TakeWeapon(int count);
     }
 }

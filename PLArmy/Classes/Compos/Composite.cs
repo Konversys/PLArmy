@@ -36,40 +36,41 @@ namespace PLArmy.Classes.Compos
         /// Взять выданные подразделению предметы
         /// </summary>
         /// <param name="subdivision">Подразделение</param>
-        public void Take(ESubdivision subdivision = ESubdivision.Рота)
+        public List<string> Take(ESubdivision subdivision = ESubdivision.Рота)
         {
+            List<string> list = new List<string>();
             switch (subdivision)
             {
                 case ESubdivision.Военнослущащий:
-                    Console.WriteLine("             Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format("             Выдать предметы: {0}", subdivision));
                     break;
                 case ESubdivision.Танк:
-                    Console.WriteLine("         Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format("         Выдать предметы: {0}", subdivision));
                     break;
                 case ESubdivision.Взвод:
-                    Console.WriteLine("     Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format("     Выдать предметы: {0}", subdivision));
                     break;
                 case ESubdivision.Рота:
-                    Console.WriteLine(" Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format(" Выдать предметы: {0}", subdivision));
                     break;
                 case ESubdivision.Батальен:
-                    Console.WriteLine("Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format("Выдать предметы: {0}", subdivision));
                     break;
                 case ESubdivision.Полк:
-                    Console.WriteLine("Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format("Выдать предметы: {0}", subdivision));
                     break;
                 default:
-                    Console.WriteLine("Выдать предметы: {0}", subdivision);
+                    list.Add(String.Format("Выдать предметы: {0}", subdivision));
                     break;
             }
             foreach (var item in components)
             {
                 if (subdivision - 1 > 0)
                 {
-                    item.Take(subdivision - 1);
+                    list.AddRange(item.Take(subdivision - 1));
                 }
             }
-            Console.WriteLine();
+            return list;
         }
     }
 }

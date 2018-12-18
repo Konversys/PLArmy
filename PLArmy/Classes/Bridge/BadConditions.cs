@@ -17,9 +17,9 @@ namespace PLArmy.Classes.Bridge
         {
         }
 
-        public override void Report()
+        public override string Report()
         {
-            Console.WriteLine("Война закончилась поражением");
+            return String.Format("Война закончилась поражением");
         }
     }
 }

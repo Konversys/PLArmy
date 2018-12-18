@@ -13,15 +13,17 @@ namespace PLArmy.Classes.Iterator
         /// Произвести перекличку взвода
         /// </summary>
         /// <param name="platoon">Взвод</param>
-        public void Begin(Platoon platoon)
+        public List<string> Begin(Platoon platoon)
         {
-            Console.WriteLine("Перекличка взвода: {0}", platoon.title);
+            List<string> vs = new List<string>();
+            vs.Add(String.Format("Перекличка взвода: {0}", platoon.title));
             ISolderIterator iterator = platoon.CreateNumerator();
             while (iterator.HasNext())
             {
                 Solder solder = iterator.Next();
-                Console.WriteLine(" Я: {0}. Должность: {1}", solder.name, solder.post);
+                vs.Add(String.Format(" Я: {0}. Должность: {1}", solder.name, solder.post));
             }
+            return vs;
         }
     }
 }

@@ -16,9 +16,11 @@ namespace PLArmy.Classes.Decorator
             this.serviceman = serviceman;
         }
 
-        public virtual void FollowInstructionInCaseOfFire()
+        public string Greeting { get; protected set; }
+
+        public virtual string FollowInstructionInCaseOfFire()
         {
-            serviceman.FollowInstructionInCaseOfFire();
+            return serviceman.FollowInstructionInCaseOfFire();
         }
     }
 }

@@ -2,6 +2,7 @@
 using PLArmy.Enums;
 using PLArmy.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace PLArmy.Classes.Proxy
 {
@@ -38,57 +39,57 @@ namespace PLArmy.Classes.Proxy
         /// Взять броню
         /// </summary>
         /// <param name="count">Кол-во</param>
-        public void TakeArmor(int count)
+        public string TakeArmor(int count)
         {
             ERank allowRank = ERank.Lieutenant;
-            Console.Write("Вы {0} ~ {1}: Броня - ", rank, allowRank);
+            string ret = String.Format("Вы {0} ~ {1}: Броня - ", rank, allowRank);
             if (rank >= allowRank)
             {
-                stock.TakeArmor(count);
+                return ret + stock.TakeArmor(count);
             }
             else
             {
-                RefuseLowRank();
+                return ret + RefuseLowRank();
             }
         }
         /// <summary>
         /// Взять еду
         /// </summary>
         /// <param name="count">Кол-во</param>
-        public void TakeFood(int count)
+        public string TakeFood(int count)
         {
             ERank allowRank = ERank.Sergeant;
-            Console.Write("Вы {0} ~ {1}: Еда - ", rank, allowRank);
+            string ret = String.Format("Вы {0} ~ {1}: Еда - ", rank, allowRank);
             if (rank >= allowRank)
             {
-                stock.TakeFood(count);
+                return ret + stock.TakeFood(count);
             }
             else
             {
-                RefuseLowRank();
+                return ret + RefuseLowRank();
             }
         }
         /// <summary>
         /// Взять оружие
         /// </summary>
         /// <param name="count">Кол-во</param>
-        public void TakeWeapon(int count)
+        public string TakeWeapon(int count)
         {
             ERank allowRank = ERank.Major;
-            Console.Write("Вы {0} ~ {1}: Оружие - ", rank, allowRank);
+            string ret = String.Format("Вы {0} ~ {1}: Оружие - ", rank, allowRank);
             if (rank >= allowRank)
             {
-                stock.TakeWeapon(count);
+                return ret + stock.TakeWeapon(count);
             }
             else
             {
-                RefuseLowRank();
+                return ret + RefuseLowRank();
             }
         }
 
-        void RefuseLowRank()
+        string RefuseLowRank()
         {
-            Console.WriteLine("Ваш ранг слишком низкий для получения этого предмета");
+            return "Ваш ранг слишком низкий для получения этого предмета";
         }
     }
 }

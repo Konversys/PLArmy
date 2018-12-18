@@ -14,34 +14,34 @@ namespace PLArmy.Classes.Adapter
     /// </summary>
     class ConscriptUSA : IServicemanUSA
     {
-        public void Attack()
+        public string Attack()
         {
-            Console.WriteLine("     I'm Attack");
+            return String.Format("I'm Attack");
         }
 
-        public void Retreat()
+        public string Retreat()
         {
-            Console.WriteLine("     I'm Retreat");
+            return String.Format("      I'm Retreat");
         }
 
-        public void SetOrder()
+        public string SetOrder()
         {
-            Console.WriteLine("     I'm can't Set Order");
+            return String.Format("      I'm can't Set Order");
         }
 
-        public void GetOrder()
+        public string GetOrder()
         {
-            Console.WriteLine("     I'm Get Order");
+            return String.Format("      I'm Get Order");
         }
 
-        public void Repair()
+        public string Repair()
         {
-            Console.WriteLine("     I'm don't know how to Repair");
+            return String.Format("      I'm don't know how to Repair");
         }
 
-        public void Break()
+        public string Break()
         {
-            Console.WriteLine("     I'll will crash everything around me");
+            return String.Format("      I'll will crash everything around me");
         }
     }
 }

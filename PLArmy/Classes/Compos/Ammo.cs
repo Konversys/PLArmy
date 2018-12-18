@@ -13,9 +13,11 @@ namespace PLArmy.Classes.Compos
     /// </summary>
     class Ammo : IItem
     {
-        public void Take(ESubdivision subdivision)
+        public List<string> Take(ESubdivision subdivision)
         {
-            Console.WriteLine("             Вы взяли боезапас");
+            List<string> vs = new List<string>();
+            vs.Add(String.Format("Вы взяли боезапас"));
+            return vs;
         }
     }
 }
