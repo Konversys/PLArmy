@@ -1,4 +1,6 @@
-﻿using PLArmy.Interfaces.Iterator;
+﻿using PLArmy.Enums;
+using PLArmy.Interfaces.Compos;
+using PLArmy.Interfaces.Iterator;
 using System.Collections.Generic;
 
 namespace PLArmy.Classes.Iterator
@@ -6,8 +8,15 @@ namespace PLArmy.Classes.Iterator
     /// <summary>
     /// Взвод
     /// </summary>
-    class Platoon : ISolderNumerable
+    class Platoon : ISolderNumerable, IItem
     {
+        /// <summary>
+        /// Очистить список солдат
+        /// </summary>
+        public void Clear()
+        {
+            solders.Clear();
+        }
         /// <summary>
         /// Приспособленец
         /// Задать Имя взвода и присоединиться
@@ -76,5 +85,31 @@ namespace PLArmy.Classes.Iterator
             solders.RemoveAll(x => x.name == name);
         }
 
+        List<IItem> components = new List<IItem>();
+        public void Take(ESubdivision subdivision = ESubdivision.Взвод)
+        {
+            foreach (var item in components)
+            {
+                item.Take(subdivision - 1);
+            }
+        }
+
+        /// <summary>
+        /// Добавить элемент
+        /// </summary>
+        /// <param name="item"></param>
+        public void AddItem(IItem item)
+        {
+            components.Add(item);
+        }
+
+        /// <summary>
+        /// Удалить элемент
+        /// </summary>
+        /// <param name="item"></param>
+        public void RemoveItem(IItem item)
+        {
+            components.Remove(item);
+        }
     }
 }

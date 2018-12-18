@@ -3,6 +3,7 @@ using PLArmy.Classes.Bridge;
 using PLArmy.Classes.Compos;
 using PLArmy.Classes.Decorator;
 using PLArmy.Classes.Delegate;
+using PLArmy.Classes.Facade;
 using PLArmy.Classes.Flyweight;
 using PLArmy.Classes.Iterator;
 using PLArmy.Classes.Proxy;
@@ -201,6 +202,16 @@ namespace PLArmy.Examples
                 platoon.SetTitleAndConnect("5М-18");
             }
 
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// Фасад
+        /// </summary>
+        public static void GoFacadePrepareSq()
+        {
+            Colonel colonel = new Colonel("Пикалов А.В", "Командир роты");
+            Console.WriteLine("{0} {1} {2} Снаряжает свое подразделение:", colonel.post, colonel.rank, colonel.name);
+            colonel.ToManage(new Sq());
             Console.ReadKey();
         }
     }

@@ -36,7 +36,7 @@ namespace PLArmy.Classes.Compos
         /// Взять выданные подразделению предметы
         /// </summary>
         /// <param name="subdivision">Подразделение</param>
-        public void Take(ESubdivision subdivision)
+        public void Take(ESubdivision subdivision = ESubdivision.Рота)
         {
             switch (subdivision)
             {

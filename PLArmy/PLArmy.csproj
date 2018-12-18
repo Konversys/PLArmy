@@ -78,6 +78,8 @@
     <Compile Include="Classes\Delegate\LowLevelKnowledge.cs" />
     <Compile Include="Classes\Delegate\LowRank.cs" />
     <Compile Include="Classes\Delegate\Serviceman.cs" />
+    <Compile Include="Classes\Facade\Colonel.cs" />
+    <Compile Include="Classes\Facade\Sq.cs" />
     <Compile Include="Classes\Flyweight\AirdefensePlatoon.cs" />
     <Compile Include="Classes\Flyweight\ConnectionPlatoon.cs" />
     <Compile Include="Classes\Flyweight\MedicalPlatoon.cs" />
@@ -117,8 +119,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\Flyweight\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

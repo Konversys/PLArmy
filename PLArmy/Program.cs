@@ -14,7 +14,8 @@ namespace PLArmy
             //Example.GoCompositeItem();
             //Example.GoIteratorPlatoonRollCall();
             //Example.GoBridgeStartWar();
-            Example.GoFlyweightPlatoonSpecialty();
+            //Example.GoFlyweightPlatoonSpecialty();
+            Example.GoFacadePrepareSq();
         }
     }
 }

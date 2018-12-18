@@ -31,5 +31,16 @@ namespace PLArmy.Classes.Flyweight
             else
                 return null;
         }
+
+        public Platoon GetPlatoonClear(string specialty)
+        {
+            if (batalion.ContainsKey(specialty))
+            {
+                batalion[specialty].Clear();
+                return batalion[specialty];
+            }
+            else
+                return null;
+        }
     }
 }
