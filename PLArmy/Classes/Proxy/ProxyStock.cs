@@ -3,6 +3,7 @@ using PLArmy.Enums;
 using PLArmy.Interfaces;
 using System;
 using System.Collections.Generic;
+using PLArmy.Classes.Iterator;
 
 namespace PLArmy.Classes.Proxy
 {
@@ -30,7 +31,7 @@ namespace PLArmy.Classes.Proxy
         /// <param name="countArmor">Кол-во брони на складе</param>
         /// <param name="countFood">Кол-во еды на складе</param>
         /// <param name="countWeapon">Кол-во оружия на складе</param>
-        public ProxyStock(Serviceman serviceman, int countArmor, int countFood, int countWeapon)
+        public ProxyStock(Solder serviceman, int countArmor, int countFood, int countWeapon)
         {
             this.stock = new Stock(countArmor, countFood, countWeapon);
             this.rank = serviceman.rank;

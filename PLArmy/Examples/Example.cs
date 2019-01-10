@@ -23,7 +23,7 @@ namespace PLArmy.Examples
         /// </summary>
         public static void GoProxyStock()
         {
-            Serviceman serviceman = new ExperiencedOfficer();
+            Solder serviceman = new ExperiencedOfficer();
             IMilitaryStock militaryStock = new ProxyStock(serviceman, 100, 20, 15);
             Print(militaryStock.TakeArmor(80));
             Print(militaryStock.TakeArmor(10));
@@ -39,7 +39,7 @@ namespace PLArmy.Examples
         /// </summary>
         public static void GoDelegateServiceman()
         {
-            Serviceman serviceman;
+            Solder serviceman;
 
             serviceman = new Conscript();
             Print(serviceman.Greeting);
@@ -65,7 +65,7 @@ namespace PLArmy.Examples
         /// </summary>
         public static void GoAdapterRusConscriptUSA()
         {
-            Serviceman serviceman = new Conscript();
+            Solder serviceman = new Conscript();
             Print(serviceman.Greeting);
             Print(serviceman.CanICommand());
             Print(serviceman.CanIEquipment());

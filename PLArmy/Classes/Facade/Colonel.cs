@@ -1,6 +1,6 @@
 ﻿using PLArmy.Classes.Delegate;
 using PLArmy.Enums;
-using PLArmy.Interfaces.Iterator;
+using PLArmy.Classes.Iterator;
 using System;
 using System.Collections.Generic;
 using System.Linq;

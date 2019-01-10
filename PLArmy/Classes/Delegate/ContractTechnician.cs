@@ -1,9 +1,10 @@
 ﻿using PLArmy.Enums;
 using System;
+using PLArmy.Classes.Iterator;
 
 namespace PLArmy.Classes.Delegate
 {
-    class ContractTechnician : Serviceman
+    class ContractTechnician : Solder
     {
         /// <summary>
         /// Технарь

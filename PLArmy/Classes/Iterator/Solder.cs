@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PLArmy.Interfaces.Iterator
+namespace PLArmy.Classes.Iterator
 {
     /// <summary>
     /// Солдат
@@ -34,5 +34,7 @@ namespace PLArmy.Interfaces.Iterator
             this.post = post;
             this.name = name;
         }
+
+        public Solder() { }
     }
 }
