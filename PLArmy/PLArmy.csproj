@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Diagrams\L6.EAP" />
     <None Include="Diagrams\Proxy.vpp" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Classes\AbstractFactory\" />
+    <Folder Include="Interfaces\AbstractFactory\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
